@@ -1,11 +1,29 @@
-import sys, math
+import sys
+import math
+
 input = sys.stdin.readline
 INF = math.inf
+
+def solve(point,x,y,abs_distance):
+
+    for i in point:
+        currnet_x = i[0]
+        currnet_y = i[1]
+
+        if min(x,x+abs_distance)<=currnet_x<=max(x,x+abs_distance) and (currnet_y==y or currnet_y==y+abs_distance):
+            continue
+        elif (currnet_x==x or currnet_x==x+abs_distance) and min(y,y+abs_distance<=currnet_y<=max(y,y+abs_distance)):
+            continue
+        else:
+            return False
+    else:
+        return True
+
+
 
 n=int(input())
 
 point = []
-
 
 min_x = INF
 min_y = INF
@@ -25,10 +43,12 @@ for i in range(n):
     if b > max_y:
         max_y = b
 
-print(min_x, max_x, min_y, max_y)
+abs_distance = max(max_x-min_x,max_y-min_y)
 
+if solve(point,min_x,min_y,abs_distance) or solve(point,min_x,max_y,abs_distance) or solve(point,max_x,min_y,abs_distance) or solve(point,max_x,max_y,-abs_distance):
+    print(abs_distance)
+else:
+    print(-1)
 
-# for current_x, current_y in point:
-#     for i in range():
 
 
