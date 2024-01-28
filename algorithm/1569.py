@@ -12,7 +12,7 @@ def solve(point,x,y,abs_distance):
 
         if min(x,x+abs_distance)<=currnet_x<=max(x,x+abs_distance) and (currnet_y==y or currnet_y==y+abs_distance):
             continue
-        elif (currnet_x==x or currnet_x==x+abs_distance) and min(y,y+abs_distance<=currnet_y<=max(y,y+abs_distance)):
+        elif (currnet_x==x or currnet_x==x+abs_distance) and min(y,y+abs_distance)<=currnet_y<=max(y,y+abs_distance):
             continue
         else:
             return False
@@ -45,7 +45,7 @@ for i in range(n):
 
 abs_distance = max(max_x-min_x,max_y-min_y)
 
-if solve(point,min_x,min_y,abs_distance) or solve(point,min_x,max_y,abs_distance) or solve(point,max_x,min_y,abs_distance) or solve(point,max_x,max_y,-abs_distance):
+if solve(point,min_x,min_y,abs_distance) or solve(point,max_x,min_y,abs_distance) or  solve(point,min_x,max_y,abs_distance)or solve(point,max_x,max_y,-abs_distance):
     print(abs_distance)
 else:
     print(-1)
