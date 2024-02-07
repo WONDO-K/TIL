@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="276529c4-6370-4d6c-9357-ffc20a3cb79e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/python/[TIL] 2024-02-06.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/image-10.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/image-11.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/image-12.png" afterDir="false" />
-    </list>
+    <list default="true" id="276529c4-6370-4d6c-9357-ffc20a3cb79e" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="2bzEmRRyaKGcXiWxkT6x51TYf37" />
   <component name="ProjectViewState">
@@ -22,6 +20,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="276529c4-6370-4d6c-9357-ffc20a3cb79e" name="Default Changelist" comment="" />
