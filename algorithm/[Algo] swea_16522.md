@@ -1,59 +1,26 @@
 ```python
 
-import sys
-sys.stdin = open('input.txt')
-sys.stdout = open('output.txt','w')
-
 for tc in range(int(input())):
-    arr = list(input().split())
-    print(f'arr : {arr}')
+    arr = input().split()
     stack = []
-    # while result:
-    #     if result[0].isdigit():
-    #         stack.append(result.pop(0))
-    #     elif result[0] in '*/+-':
-    #         a,b = stack.pop(),stack.pop()
-    #         if result.pop(0) == '+':
-    #            stack.append(int(a)+int(b))
-
-    # while arr:
-    #     if arr[0].isdigit():
-    #         stack.append(arr.pop(0))
-    #     elif arr[0] in '*/+-':
-    #         a,b = stack.pop(), stack.pop()
-    #         print(f'a:{a}, b:{b}')
-    #         if arr[0] == '+':
-    #             arr.pop(0)
-    #             stack.append(int(a) + int(b))
-    #         elif arr[0] == '-':
-    #             arr.pop(0)
-    #             stack.append(int(a) - int(b))
-    #         elif arr[0] == '*':
-    #             arr.pop(0)
-    #             stack.append(int(a) * int(b))
-    #         elif arr[0] == '/':
-    #             arr.pop(0)
-    #             stack.append(int(a) / int(b))
-    flag=False
     while arr:
-        print(f'arr : {arr}')
         if arr[0] == '.':
-            flag = True
+            if len(stack)!=1:
+                result = 'error'
+                break
+            result = stack.pop()
             break
         else:
             if arr[0].isdigit():
                 stack.append(arr.pop(0))
-                print(f'stack : {stack}')
 
             elif arr[0] in '*/+-':
-                print(f'arr : {arr[0]}')
-                if len(stack)<=1:
+                if len(stack) < 2:  # stack에 있는 top,top-1의 값을 pop할 때 원소의 개수가 2개 이하라면 연산자와 피연산자의 짝이 안맞음
+                    result = 'error'
                     break
-                else:
+                else:  # stack에 2개 이상의 값이 있기 때문에 아직 연산자와 피연산자의 짝이 맞는 중
                     b, a = stack.pop(), stack.pop()
-                    print(f'a:{a}, b:{b}')
                     operator = arr.pop(0)
-                    print(f'operator : {operator}')
                     if operator == '+':
                         stack.append(int(a) + int(b))
                     elif operator == '-':
@@ -61,11 +28,8 @@ for tc in range(int(input())):
                     elif operator == '*':
                         stack.append(int(a) * int(b))
                     elif operator == '/':
-                        stack.append(int(a)/int(b))
-                    print(f'after stack : {stack}')
-    print()
-if flag == True:
-    print(f'#{tc+1}', stack)
-else:
-    print(f'#{tc+1} error')
+                        stack.append(int(a) // int(b))
+    print(f'#{tc + 1} {result}')
+
+
 ```
