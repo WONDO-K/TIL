@@ -16,11 +16,11 @@ def f(i, k, s, target): # k개의 원소를 가진 배열A, 부분 집합의 합
         bit[i]=1 # 포함
         f(i+1, k, s+A[i], target)
         bit[i]=0 # 미포함
-        # f(i+1, k, s, target)
+        f(i+1, k, s, target)
 
 N = 5
 A = [1,2,3,4,5,6,7,8,9,10,11,12]
 bit = [0]*N # bit[i] = A[i]의 포함여부를 결정한다.
 cnt=0
-f(0, N, 0, 16)
+f(0, N, 0, )
 print('cnt = ', cnt)
