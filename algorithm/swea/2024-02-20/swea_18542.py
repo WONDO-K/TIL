@@ -18,4 +18,5 @@ for tc in range(int(input())):
     arr=[0 for i in range(n+1)]
     num=1
     in_order(1)
+    print(arr)
     print(f'#{tc+1} {arr[1]} {arr[n//2]}')
