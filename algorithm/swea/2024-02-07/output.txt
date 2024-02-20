@@ -1,0 +1,396 @@
+#1
+now i = p
+first lst=[]
+lst == 0
+now i = r
+first lst=[]
+lst == 0
+now i = i
+first lst=[]
+lst == 0
+now i = n
+first lst=[]
+lst == 0
+now i = t
+first lst=[]
+lst == 0
+now i = (
+first lst=['(']
+now i = '
+first lst=['(']
+now i = {
+first lst=['(', '{']
+now i = }
+first lst=['(', '{']
+i = } , lst[-1] = {
+pop
+after pop lst = ['(']
+now i =  
+first lst=['(']
+now i = {
+first lst=['(', '{']
+now i = }
+first lst=['(', '{']
+i = } , lst[-1] = {
+pop
+after pop lst = ['(']
+now i = '
+first lst=['(']
+now i = .
+first lst=['(']
+now i = f
+first lst=['(']
+now i = o
+first lst=['(']
+now i = r
+first lst=['(']
+now i = m
+first lst=['(']
+now i = a
+first lst=['(']
+now i = t
+first lst=['(']
+now i = (
+first lst=['(', '(']
+now i = 1
+first lst=['(', '(']
+now i = ,
+first lst=['(', '(']
+now i =  
+first lst=['(', '(']
+now i = 2
+first lst=['(', '(']
+now i = )
+first lst=['(', '(']
+i = ) , lst[-1] = (
+pop
+after pop lst = ['(']
+now i = )
+first lst=['(']
+i = ) , lst[-1] = (
+pop
+after pop lst = []
+#1 1
+#2
+now i = N
+first lst=[]
+lst == 0
+now i = ,
+first lst=[]
+lst == 0
+now i =  
+first lst=[]
+lst == 0
+now i = M
+first lst=[]
+lst == 0
+now i =  
+first lst=[]
+lst == 0
+now i = =
+first lst=[]
+lst == 0
+now i =  
+first lst=[]
+lst == 0
+now i = m
+first lst=[]
+lst == 0
+now i = a
+first lst=[]
+lst == 0
+now i = p
+first lst=[]
+lst == 0
+now i = (
+first lst=['(']
+now i = i
+first lst=['(']
+now i = n
+first lst=['(']
+now i = t
+first lst=['(']
+now i = ,
+first lst=['(']
+now i =  
+first lst=['(']
+now i = i
+first lst=['(']
+now i = n
+first lst=['(']
+now i = p
+first lst=['(']
+now i = u
+first lst=['(']
+now i = t
+first lst=['(']
+now i = (
+first lst=['(', '(']
+now i = )
+first lst=['(', '(']
+i = ) , lst[-1] = (
+pop
+after pop lst = ['(']
+now i = .
+first lst=['(']
+now i = s
+first lst=['(']
+now i = p
+first lst=['(']
+now i = l
+first lst=['(']
+now i = i
+first lst=['(']
+now i = t
+first lst=['(']
+now i = (
+first lst=['(', '(']
+now i = )
+first lst=['(', '(']
+i = ) , lst[-1] = (
+pop
+after pop lst = ['(']
+now i = )
+first lst=['(']
+i = ) , lst[-1] = (
+pop
+after pop lst = []
+now i =  
+first lst=[]
+lst == 0
+#2 1
+#3
+now i = p
+first lst=[]
+lst == 0
+now i = r
+first lst=[]
+lst == 0
+now i = i
+first lst=[]
+lst == 0
+now i = n
+first lst=[]
+lst == 0
+now i = t
+first lst=[]
+lst == 0
+now i = (
+first lst=['(']
+now i = '
+first lst=['(']
+now i = #
+first lst=['(']
+now i = {
+first lst=['(', '{']
+now i = }
+first lst=['(', '{']
+i = } , lst[-1] = {
+pop
+after pop lst = ['(']
+now i =  
+first lst=['(']
+now i = {
+first lst=['(', '{']
+now i = }
+first lst=['(', '{']
+i = } , lst[-1] = {
+pop
+after pop lst = ['(']
+now i = '
+first lst=['(']
+now i = .
+first lst=['(']
+now i = f
+first lst=['(']
+now i = o
+first lst=['(']
+now i = r
+first lst=['(']
+now i = m
+first lst=['(']
+now i = a
+first lst=['(']
+now i = t
+first lst=['(']
+now i = (
+first lst=['(', '(']
+now i = t
+first lst=['(', '(']
+now i = c
+first lst=['(', '(']
+now i = ,
+first lst=['(', '(']
+now i =  
+first lst=['(', '(']
+now i = f
+first lst=['(', '(']
+now i = i
+first lst=['(', '(']
+now i = n
+first lst=['(', '(']
+now i = d
+first lst=['(', '(']
+now i = (
+first lst=['(', '(', '(']
+now i = )
+first lst=['(', '(', '(']
+i = ) , lst[-1] = (
+pop
+after pop lst = ['(', '(']
+now i = )
+first lst=['(', '(']
+i = ) , lst[-1] = (
+pop
+after pop lst = ['(']
+#3 0
+#4
+now i = p
+first lst=[]
+lst == 0
+now i = r
+first lst=[]
+lst == 0
+now i = i
+first lst=[]
+lst == 0
+now i = n
+first lst=[]
+lst == 0
+now i = t
+first lst=[]
+lst == 0
+now i = (
+first lst=['(']
+now i = '
+first lst=['(']
+now i = {
+first lst=['(', '{']
+now i = }
+first lst=['(', '{']
+i = } , lst[-1] = {
+pop
+after pop lst = ['(']
+now i =  
+first lst=['(']
+now i = }
+first lst=['(']
+i = } , lst[-1] = (
+no answer : (
+break
+#4 0
+#5
+now i = (
+first lst=['(']
+now i = (
+first lst=['(', '(']
+now i = (
+first lst=['(', '(', '(']
+now i = )
+first lst=['(', '(', '(']
+i = ) , lst[-1] = (
+pop
+after pop lst = ['(', '(']
+#5 0
+#6
+now i = {
+first lst=['{']
+now i = }
+first lst=['{']
+i = } , lst[-1] = {
+pop
+after pop lst = []
+now i = }
+first lst=[]
+lst == 0
+#6 0
+#7
+now i = (
+first lst=['(']
+now i = )
+first lst=['(']
+i = ) , lst[-1] = (
+pop
+after pop lst = []
+now i = {
+first lst=['{']
+now i = )
+first lst=['{']
+i = ) , lst[-1] = {
+no answer : {
+break
+#7 0
+#8
+now i = (
+first lst=['(']
+now i = {
+first lst=['(', '{']
+now i = (
+first lst=['(', '{', '(']
+now i = (
+first lst=['(', '{', '(', '(']
+now i = )
+first lst=['(', '{', '(', '(']
+i = ) , lst[-1] = (
+pop
+after pop lst = ['(', '{', '(']
+now i = )
+first lst=['(', '{', '(']
+i = ) , lst[-1] = (
+pop
+after pop lst = ['(', '{']
+now i = }
+first lst=['(', '{']
+i = } , lst[-1] = {
+pop
+after pop lst = ['(']
+now i = )
+first lst=['(']
+i = ) , lst[-1] = (
+pop
+after pop lst = []
+now i = (
+first lst=['(']
+now i = )
+first lst=['(']
+i = ) , lst[-1] = (
+pop
+after pop lst = []
+now i = (
+first lst=['(']
+now i = {
+first lst=['(', '{']
+now i = {
+first lst=['(', '{', '{']
+now i = }
+first lst=['(', '{', '{']
+i = } , lst[-1] = {
+pop
+after pop lst = ['(', '{']
+now i = }
+first lst=['(', '{']
+i = } , lst[-1] = {
+pop
+after pop lst = ['(']
+now i = )
+first lst=['(']
+i = ) , lst[-1] = (
+pop
+after pop lst = []
+#8 1
+#9
+now i = (
+first lst=['(']
+now i = )
+first lst=['(']
+i = ) , lst[-1] = (
+pop
+after pop lst = []
+now i = {
+first lst=['{']
+now i = )
+first lst=['{']
+i = ) , lst[-1] = {
+no answer : {
+break
+#9 0
