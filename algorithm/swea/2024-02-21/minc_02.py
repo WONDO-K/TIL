@@ -11,16 +11,17 @@ def sol(start_i,start_j):
     for i in range(n):
         for j in range(n):
             if target == arr[i][j]:
-                print(f'i:{i}, j:{j}')
+                #print(f'i:{i}, j:{j}')
                 row = i-start_i+1
                 col = j-start_j+1
                 area = row*col
-                print(f'row:{row},col:{col},area:{area}')
+                if area == max_area:
+                    cnt+=1
+                #print(f'row:{row},col:{col},area:{area}')
             if area > max_area:
                 max_area = area
                 cnt=1
-            elif area == max_area:
-                cnt+=1
+
 
 for tc in range(T):
     arr = []
@@ -35,6 +36,6 @@ for tc in range(T):
     for i in range(n):
         for j in range(n):
             sol(i,j)
-    print(f'#{tc+1} max_area : {max_area}')
-    print(f'cnt : {cnt}')
+    print(f'#{tc+1} {cnt}')
+    #print(f'cnt : {cnt}')
 
