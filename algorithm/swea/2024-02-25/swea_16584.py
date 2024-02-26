@@ -38,12 +38,13 @@ sys.stdout = open('16584_output.txt', 'w')
 #     print(f'#{tc+1} {min_v}')
 
 def solve(row, col, sum_v):
-    global min_v,cnt
-    cnt+=1
+    global min_v
 
     if col == n:  # 모든 열에 대한 선택이 완료된 경우
-        print(f'sum_v : {sum_v}')
         min_v = min(min_v, sum_v)  # 현재 합계와 최소값을 비교하여 갱신
+    elif sum_v>min_v:
+        return
+
     else:
         for i in range(n):
             if not row[i]:  # 아직 선택되지 않은 행인 경우
@@ -57,7 +58,5 @@ for tc in range(int(input())):
     arr = [list(map(int, input().split())) for _ in range(n)]
     min_v = float('inf')  # 초기 최소값 설정
     selected_row = [False] * n  # 각 행의 선택 여부를 저장하는 배열
-    cnt=0
     solve(selected_row, 0, 0)  # 함수 호출
-    print(f'cnt : {cnt}')
     print(f'#{tc + 1} {min_v}')
