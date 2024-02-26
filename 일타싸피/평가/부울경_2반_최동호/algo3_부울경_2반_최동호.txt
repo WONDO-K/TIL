@@ -1,0 +1,20 @@
+문제 3. 서술형
+
+3-1.
+stack 자료구조를 사용했다.
+stack은 후입선출의 특성을 지니므로 가장 먼저 삽입한 값은 bottom, 가장 나중에 삽입한 값은 top 포지션에 위치하며,
+top 위치에 있는 원소부터 pop을 통해 먼저 값을 뺄 수 있다.
+
+3-2.
+입력해야 하는 문자열 ABCCB
+
+시작.
+현재 확인한 문자 , 현재 stack 현황 : []
+
+[A] -> stack [A]
+[A,B] -> stack [A,B]
+[A,B,C] -> stack [A,B,C]
+[A,B,C,C] -> stack [A,B]
+[A,B,C,C,B] -> stack [A]
+
+최종 stack의 현황 : [A]
