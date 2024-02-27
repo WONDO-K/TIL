@@ -8,7 +8,7 @@ def triplet_check(arr):
     return False
 
 def run_check(arr):
-    arr.sort()
+    arr = arr.sort()
     cnt=1
     for i in range(len(arr)-1):
         if arr[i]+1 == arr[i+1]:
