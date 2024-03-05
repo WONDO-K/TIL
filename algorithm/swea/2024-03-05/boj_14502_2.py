@@ -18,8 +18,9 @@ def bfs(point,virus):
         cnt = 0
 
         que = deque()
-        for i,j in virus:
-            que.append(([i,j]))
+        for j,i in virus:
+            que.append(([j,i]))
+        que.append(([0,0]))
 
         while que:
             x,y = que.popleft()
@@ -31,6 +32,10 @@ def bfs(point,virus):
                     if now_arr[nx][ny]==0:
                         now_arr[nx][ny]=2
                         que.append(([nx,ny]))
+        # print(f'after temp')
+        # for i in now_arr:
+        #     print(i)
+        # print()
         cnt=0
         # 반복문 종료 시 안전 영역 수 파악
         for i in now_arr:
@@ -45,18 +50,18 @@ arr = [list(map(int,input().split())) for _ in range(n)]
 
 temp=[]
 # 0인 경우만 고려해야하기 때문에 0이 아닌 위치의 숫자를 제외한 조합을 만들기 위한 선별 작업
-for i in range(n):
-    for j in range(m):
-        if arr[i][j]==0:
+for j in range(m):
+    for i in range(n):
+        if arr[j][i]==0:
             temp.append(m*i+j+1)
 point = deque(combinations(temp, 3))
-
+print(point)
 virus = deque()
 
-for i in range(n):
-    for j in range(m):
-        if arr[i][j] == 2:
-            virus.append([i,j])
+for j in range(m):
+    for i in range(n):
+        if arr[j][i] == 2:
+            virus.append([j,i])
 
 max_area = -float('inf')
 bfs(point,virus)
