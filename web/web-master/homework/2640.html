@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .whole_area {
+        box-sizing: border-box;
+        width: 300px;
+        height: 350px;
+        border: 1px solid black;
+        text-align: center;
+        /* position: relative; 부모 요소를 상대적 위치로 설정 */
+    }
+    img {
+        width: 250px;
+        height: 150px;
+    }
+    .img_space {
+        position: relative;
+    }
+    .namespace {
+        background-color: lightsalmon;
+        opacity: 0.8;
+        width: 90%;
+        box-sizing: border-box;
+        margin: 0 auto; /* 가운데 정렬 */
+        position: absolute;
+        bottom: 0;
+        left: 5%;
+        padding: 5px;
+        font-size: 20px;
+        font-weight: bold;
+
+    }
+    /* text-align:text = 내가 정렬하고 싶은 대상의 부모한테 걸어줘야함 */
+    /* 글자 정렬은 해당 범위에서 */
+    .contents {
+        text-align: left;
+    }
+  </style>
+</head>
+<body>
+  <div class="whole_area">
+    <div class="img_space">
+      <img src="profile.jpg" alt="Profile Image">
+      <p class="namespace">Name</p>
+    </div>
+    <p class="contents">Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci unde officiis ad nostrum. Laboriosam mollitia similique provident fuga tenetur saepe sit, amet eaque neque eius quaerat expedita ea illum veniam.</p>
+  </div>
+</body>
+</html>
