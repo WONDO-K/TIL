@@ -6,65 +6,61 @@ input = sys.stdin.readline
 dx = [-1,1,0,0]
 dy = [0,0,-1,1]
 
-def bfs(i,j,way):
+def make_dir(way_idx,direction):
+    if way_idx == 0:
+        if direction == 'D':
+            way_idx = 3
+        else:
+            way_idx = 2
+    elif way_idx == 1:
+        if direction == 'D':
+            way_idx = 2
+        else:
+            way_idx = 3
+    elif way_idx == 2:
+        if direction == 'D':
+            way_idx = 0
+        else:
+            way_idx = 1
+    else:
+        if direction == 'D':
+            way_idx = 1
+        else:
+            way_idx = 0
+    return way_idx
+def bfs(x,y,way):
 
-    que = deque()
-    que.append(([i,j]))
+    tail = deque()
+    tail.append((x,y))
 
     way_idx=3
     sec = 0
-    flag = True
-    while que:
-        x,y = que.popleft()
-        move_cnt, direction = way.popleft()
-        move_cnt = int(move_cnt)
 
-        if flag == False:
-            break
-        nx,ny=0,0
-        for i in range(1,move_cnt+1):
-            nx = x + dx[way_idx]*i
-            ny = y + dy[way_idx]*i
+    # 현재 몇번째 이동 명령인지 확인하기 위한 변수
+    way_num = 0
+    while True:
+        nx = x + dx[way_idx]
+        ny = y + dy[way_idx]
+
+        if 1<=nx<n+1 and 1<=ny<n+1 and arr[nx][ny]!=1:
+            # 다음 좌표가 사과라면
+            if arr[nx][ny] == 2:
+                arr[nx][ny]=1 # 다음 좌표를 1로 변경
+                tail.append((nx, ny))
+            # 다음 좌표가 빈칸이라면
+            elif arr[nx][ny]==0:
+                arr[nx][ny]=1 # 다음칸에 머리
+                tail.append((nx, ny))
+                tail_x,tail_y = tail.popleft()
+                arr[tail_x][tail_y]=0
+            x,y = nx,ny
             sec += 1  # 시간 증가
-            if 1<=nx<n+1 and 1<=ny<n+1:
-                # 다음 좌표가 사과라면
-                if arr[nx][ny] == 2:
-                    arr[nx][ny]=1 # 다음 좌표를 1로 변경
-                # 다음 좌표가 빈칸이라면
-                elif arr[nx][ny]==0: 
-                    arr[nx][ny]=1 # 다음칸에 머리
-                    arr[x][y]=0 # 이전칸 꼬리를 줄이기
-                elif arr[nx//i][ny//i]==1: # 다음 좌표가 뱀의 몸에 닿는다면 종료
-                    flag=False
-                    break
-            else:
-                flag=False
-                break
-        if flag==True:
-            # break 없이 for문이 종료되면 que에 다음 좌표 삽입
-            que.append(([nx,ny]))
-
-        if way_idx == 0:
-            if direction == 'D':
-                way_idx=3
-            else:
-                way_idx=2
-        elif way_idx == 1:
-            if direction == 'D':
-                way_idx=2
-            else:
-                way_idx=3
-        elif way_idx == 2:
-            if direction == 'D':
-                way_idx=0
-            else:
-                way_idx=1
-        else:
-            if direction == 'D':
-                way_idx=1
-            else:
-                way_idx=0
-
+        else: # 벽이거나 몸에 부딪힌 경우
+            sec+=1
+            break
+        if way_num<way_cnt and way[way_num][0] == sec :
+            way_idx = make_dir(way_idx, way[way_num][1])
+            way_num+=1
     return sec
 
 
@@ -82,13 +78,11 @@ for _ in range(apple_cnt):
 
 way_cnt = int(input())
 
-way = deque()
+way = []
 for _ in range(way_cnt):
-    way.append(list(input().split()))
+    x, c = input().split()  # 방향변환 정보
+    way.append((int(x), c))  # 정보를 list에 저장
 
 ans = bfs(1,1,way)
-
-for i in arr:
-    print(i)
 
 print(ans)
