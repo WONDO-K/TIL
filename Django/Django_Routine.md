@@ -9,6 +9,8 @@
 7. Django 서버 실행 : python manage.py runserver
 8. 앱 생성 : python manage.py startapp 앱 이름 (복수형 s)
 9. 앱 등록 : settings.py -> '앱 이름' 추가
+10. 모델 정의 시 : python manage.py makemigrations , python manage.py migration
+
 10. Django에서 template를 인식하는 경로 규칭
     - app폴더/templates/articles/index.html
     - app폴더/templates/index.html
