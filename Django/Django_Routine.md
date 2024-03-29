@@ -17,6 +17,7 @@
 
 11. QuerySet API 세팅 : pip install ipython, pip install django-extensions
 11-1 : settings.py에 'django_extensions', 추가
+11-2 : shell 실행 - python manage.py shell_plus
 
 12. 관리자 계정 생성 - python manage.py createsuperuser
 	- 원하는 사용자 이름 (username)
