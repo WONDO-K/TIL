@@ -18,10 +18,7 @@ while start<=end:
         temp += right
         end -= 1
     else: # 만약 같다면 마지막 하나 남았으니 추가하고 종료
-        if start == end:
-            temp += left
-            break
-        elif end-start==1 and left == right: # 비교 대상이 2개 남고 서로 같은 값이라면 아무거나 추가해도 됨
+        if end-start<=1:
             temp += left
             start+=1
         else:
@@ -38,13 +35,17 @@ while start<=end:
                     temp += right
                     end-=1
                     break
+                elif end2-start2<=1:
+                    temp += left
+                    start+=1
+                    break
                 else: # start2와 end2가 서로 같다면
                     start2+=1
                     end2-=1
 cnt=0
 
 for i in temp:
-    if cnt % 80 == 0 and cnt != 0:
+    if cnt != 0 and cnt % 80 == 0:
         print()
     else:
         print(i,end='')
