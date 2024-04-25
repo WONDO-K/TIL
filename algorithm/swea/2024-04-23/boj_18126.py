@@ -32,7 +32,14 @@ def bfs(start):
     visit[start][0] = 1  # 시작 노드를 방문했음을 표시
     while que:
         now, cost = que.popleft()
+
+        if visit[now][1] > cost:
+            continue
+
         visit[now][1] = cost  # 현재 노드까지의 거리를 저장
+
+
+
         for next_node, next_cost in arr[now]:
             if visit[next_node][0] == 0:  # 다음 노드를 방문하지 않았을 때
                 visit[next_node][0] = 1  # 다음 노드를 방문했음을 표시
@@ -50,5 +57,4 @@ for _ in range(n-1):
     arr[start].append((end,cost))
     arr[end].append((start,cost))
 bfs(1)
-print(visit)
 print(visit[n][1])
