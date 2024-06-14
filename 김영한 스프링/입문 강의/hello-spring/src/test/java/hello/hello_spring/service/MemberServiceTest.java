@@ -69,11 +69,4 @@ class MemberServiceTest { // test는 과감하게 한글로 네이밍해도 실�
 
     }
 
-    @Test
-    void findMembers() {
-    }
-
-    @Test
-    void findOne() {
-    }
 }
