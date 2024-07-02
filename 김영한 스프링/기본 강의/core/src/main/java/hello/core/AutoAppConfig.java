@@ -14,9 +14,9 @@ import org.springframework.context.annotation.FilterType;
 ) // @ComponentScan는 스프링 빈을 자동으로 끌어올려야함, @Component 어노테이션이 붙어 있는 클래스를 찾아서 자동으로 스프링 빈에 등록해준다.
 public class AutoAppConfig {
 
-//    @Bean(name="memoryMemberRepository")
-//    MemberRepository memberRepository(){
-//        return new MemoryMemberRepository();
-//    }
+    @Bean(name="memoryMemberRepository")
+    MemberRepository memberRepository(){
+        return new MemoryMemberRepository();
+    }
 
 }
