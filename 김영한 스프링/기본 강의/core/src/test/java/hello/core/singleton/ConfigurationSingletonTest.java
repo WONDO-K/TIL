@@ -17,6 +17,7 @@ public class ConfigurationSingletonTest {
     @Test
     void configurationTest(){
         AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext(AppConfig.class);
+
         MemberServiceImpl memberService = ac.getBean("memberService", MemberServiceImpl.class);
         OrderServiceImpl orderService = ac.getBean("orderService", OrderServiceImpl.class);
         MemoryMemberRepository memberRepository = ac.getBean("memberRepository", MemoryMemberRepository.class);

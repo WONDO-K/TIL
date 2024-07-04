@@ -1,7 +1,6 @@
 package hello.core;
 
 import hello.core.discount.DiscountPolicy;
-import hello.core.discount.FIxDiscountPolicy;
 import hello.core.discount.RateDiscountPolicy;
 import hello.core.member.MemberService;
 import hello.core.member.MemberServiceImpl;
@@ -43,8 +42,8 @@ public class AppConfig { // AppConfig가 의존관계를 대신 주입하기 때
     @Bean
     public OrderService orderService(){
         System.out.println("call AppConfig.orderService");
-        // return new OrderServiceImpl(memberRepository(), discountPolicy());
-        return null;
+         return new OrderServiceImpl(memberRepository(), discountPolicy());
+        // return null;
     }
     @Bean
     public DiscountPolicy discountPolicy(){
