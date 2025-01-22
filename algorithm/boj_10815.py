@@ -7,7 +7,6 @@ def solve(idx,num):
     while left<=right:
         mid = (left+right)//2
         if arr[mid] == num:
-            print('idx up')
             ans[idx]+=1
             return
         
