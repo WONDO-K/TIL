@@ -26,7 +26,7 @@ def djk(start):
 n,m = map(int,input().split())
 start = int(input())
 
-arr = [[]for _ in range(m+1)]
+arr = [[]for _ in range(n+1)]
 
 for _ in range(m):
     s,e,v = map(int,input().split())
