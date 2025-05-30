@@ -14,4 +14,35 @@
 - 단, @Value의 경우에는 단일 값을 주입받기 위해 사용하며, RelaxedBinding이 적용되지 않는다.
     - RelaxedBinding란? : 프로퍼티 이름이 조금 달라도 유연하게 바인딩을 시켜주는 규칙을 의미
 - 반면 @ConfigurationProperties는 프로퍼티에 있는 값을 클래스로 바인딩하기 위해 사용한다.
-한 번에 여러 값을 바인딩 받을 수 있으며 RelaxedBinding을 적용한다.
+한 번에 여러 값을 바인딩 받을 수 있으며 RelaxedBinding을 적용한다. 
+
+## @DynamicPropertySource와 테스트 환경의 동적 프로퍼티 주입
+
+- `@DynamicPropertySource`는 테스트 환경에서 필요한 설정 값을 동적으로 주입할 수 있도록 지원하는 어노테이션이다.
+- 테스트 클래스 내부에 `@DynamicPropertySource`를 선언하고, `DynamicPropertyRegistry`를 통해 값을 설정하면 테스트 컨텍스트에 해당 값이 주입된다.
+
+```java
+@DynamicPropertySource
+static void overrideProps(DynamicPropertyRegistry registry) {
+    registry.add("jwt.secret", () -> "test-secret");
+}
+```
+
+### 사용 이유 및 장점
+
+1. **테스트 환경의 독립성 확보**
+   - 운영 환경 설정을 그대로 사용하는 것은 위험하며, 테스트 목적에 맞는 고립된 환경을 만들어야 한다.
+   - 테스트 전용 DB, 시크릿 키, API 주소 등을 설정하여 실환경 자원에 영향을 주지 않는다.
+
+2. **유연한 설정값 제어**
+   - 테스트 컨테이너, 랜덤 포트, 동적 토큰 등 코드로 결정되는 설정값을 주입할 수 있다.
+   - 정적 프로퍼티 파일보다 더 유연하게 환경을 구성할 수 있다.
+
+3. **테스트 간 충돌 방지**
+   - 각 테스트마다 다른 설정값을 가질 수 있어 데이터 간섭이나 자원 충돌을 방지할 수 있다.
+
+### 면접에서는 이렇게도 나올 수 있어요
+
+> "SpringBootTest 환경에서 실 DB 접근을 피하고 싶다면 어떻게 하시겠어요?"
+
+- `@DynamicPropertySource`와 테스트 컨테이너를 활용하여 테스트 실행 시점에 전용 DB를 동적으로 할당하고, 연결 정보를 프로퍼티로 주입하여 독립적인 테스트 환경을 구성할 수 있다고 설명하면 좋다.
