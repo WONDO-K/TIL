@@ -82,14 +82,13 @@ After deep copy and change:");
 }
 ```
 - shallowCopy()
-    - 새로운 Book 객체를 만들지만, 내부의 Author 객체는 원본과 동일한 객체를 참조한다.
-    즉, Book 객체는 새로 만들었지만, Author 객체는 새로 만들지 않고 기존의 것을 그대로 사용한다.
-    - 예를 들어, Book1에서 shallowCopyBook를 만든 후, shallowCopyBook의 저자 이름을 "Dong Woonoh"로 바꾸면 book1의 저자 이름도 "Dong Woonoh"로 바뀐다.
-    - 둘이 같은 Author 객체를 공유하고 있기 때문에 두 Book 객체의 Author가 동시에 변경된다.
+    - Book 객체는 새로 만들되, 내부의 Author 객체는 기존 Book이 참조하던 것을 그대로 사용한다.
+    - 즉, 두 Book 인스턴스가 같은 Author 인스턴스를 참조하게 된다.
+    - 예를 들어, shallowCopyBook의 저자 이름을 바꾸면, book1의 저자 이름도 함께 바뀐다.
 - deepCopy()
-    - Book 객체와 Author 객체 모두 새로운 객체로 만들어준다.
-    - 그래서 book2에서 deepCopyBook을 만들고 deepCopyBook의 저자 이름을 "Dong Kka"로 변경해도, book2의 저자 이름은 여전히 "동까"로 남아 있다.
-    - deepCopyBook과 book2가 서로 다른 Author 객체를 참조하고 있기 때문이다.
+    - Book과 Author 모두 새롭게 복제된 객체로 생성된다.
+    - 즉, 원본 Book의 Author와 복사된 Book의 Author는 서로 다른 인스턴스이다.
+    - 따라서 deepCopyBook의 저자 이름을 변경해도, 원본 book2의 Author는 영향을 받지 않는다.
 ## 출력 결과
 ### book1
 ```java
