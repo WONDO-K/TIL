@@ -11,6 +11,43 @@
 확장에는 열려있고, 변경에는 닫혀 있어야 한다는 원칙이다.
 이때, 확장이란 새로운 타입을 추가함으로써 새로운 기능을 추가하는 것을 의마하며, 폐쇄란 확장이 일어날 때 상위 레벨의 모듈이 영향을 받지 않아야 함을 의미한다. 이를 통해서 모듈의 행동을 쉽게 변경할 수 있다. 모듈이란 크기와 상관없이 클래스, 패키지, 라이브러리와 같이 프로그램을 구성하는 임의의 요소를 의미한다.
 
+## 예제
+
+```java
+// OCP 원칙을 적용한 예제: 주문 금액에 따라 다른 할인 정책 적용
+
+class Order {
+    private int amount;
+    private DiscountPolicy discountPolicy;
+
+    public Order(int amount, DiscountPolicy discountPolicy) {
+        this.amount = amount;
+        this.discountPolicy = discountPolicy;
+    }
+
+    public int calculateFinalPrice() {
+        int discount = discountPolicy.getDiscount(amount);
+        return amount - discount;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        // 고정 할인 정책 적용
+        DiscountPolicy policy1 = new FixedDiscountPolicy();
+        Order order1 = new Order(10000, policy1);
+        System.out.println("최종 결제 금액 (고정 할인): " + order1.calculateFinalPrice());
+
+        // 등급 할인 정책 적용
+        DiscountPolicy policy2 = new GradeDiscountPolicy();
+        Order order2 = new Order(10000, policy2);
+        System.out.println("최종 결제 금액 (등급 할인): " + order2.calculateFinalPrice());
+    }
+}
+```
+
+- 이 코드는 `Order` 객체가 `DiscountPolicy` 인터페이스에만 의존하며, 새로운 정책을 추가할 때 기존 `Order` 코드는 변경하지 않음. OCP를 지킨 구조임.
+```
 ## Liskov Substitution Principle (LSP) - 리스코프 치환 원칙
 서브 타입은 언제나 상위 타입으로 교체할 수 있어야 한다. 즉, 서브 타입은 상위 타입이 약속한 규약을 지켜야 한다는 원칙이다. 이 원칙은 부모 쪽으로 업 캐스팅하는 것이 안전함을 보장하기 위해 존재한다. 만약 서브 타입이 상위 타입의 규약을 지키지 않는다면, 상위 타입을 사용하는 코드에서 서브 타입을 사용할 때 예기치 않은 동작이 발생할 수 있다.
 이렇게 되면 상위 타입을 사용하는 클라이언트 코드에서는 하위 타입이 누구인지 물어봐야 하며, 이는 OCP를 달성하기 어렵게 만든다. LSP 위반의 대표적인 사례로는 Rectangle 예제가 있다.
